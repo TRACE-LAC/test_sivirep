@@ -56,7 +56,7 @@ try_fechanotifica <- function (data_event_limp, desease, year) {
   tryCatch(
     {
       casos_fecha_notificacion <-  agrupar_fecha_notifica(data_event = data_event_limp)
-      result_dim <- dim(data_event_filtrada)                                          # Guardar las dimensiones (filas, columnas) del data frame resultante
+      result_dim <- dim(casos_fecha_notificacion)                                          # Guardar las dimensiones (filas, columnas) del data frame resultante
       succ_msg <- paste("Success",desease,year,":",result_dim[1]," rows,",result_dim[2]," columns")
       print(succ_msg)
       list(data=casos_fecha_notificacion,res="Success",msg=succ_msg)                     # Devolver como resultado los datos, "Success" y un mensaje las dimensiones del data frame
@@ -125,4 +125,4 @@ for (i in 1:nrow(des_ano_no_error)) {
   
 }
 #df <- apply(results_fechanotif,2,as.character)
-#write.csv2(df,"ResultsFechaNotifica.CSV",row.names = FALSE, na='')
+#write.csv2(df,"ResultsTest4_2.CSV",row.names = FALSE, na='')

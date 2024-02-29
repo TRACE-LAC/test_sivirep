@@ -56,7 +56,7 @@ try_fechainisintomas <- function (data_event_limp, desease, year) {
   tryCatch(
     {
       casos_ini_sintomas <-  agrupar_fecha_inisintomas(data_event = data_event_limp)
-      result_dim <- dim(data_event_filtrada)                                          # Guardar las dimensiones (filas, columnas) del data frame resultante
+      result_dim <- dim(casos_ini_sintomas)                                          # Guardar las dimensiones (filas, columnas) del data frame resultante
       succ_msg <- paste("Success",desease,year,":",result_dim[1]," rows,",result_dim[2]," columns")
       print(succ_msg)
       list(data=casos_ini_sintomas,res="Success",msg=succ_msg)                     # Devolver como resultado los datos, "Success" y un mensaje las dimensiones del data frame
@@ -125,4 +125,4 @@ for (i in 154:nrow(des_ano_no_error)) {
   
 }
 
-write.csv2(results_inisin_fecha,"RESULTS_INISINT2.CSV",row.names = FALSE, na='')
+#write.csv2(results_inisin_fecha,"ResultsTest4_1.CSV",row.names = FALSE, na='')
