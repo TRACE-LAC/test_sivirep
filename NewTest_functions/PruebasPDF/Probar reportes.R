@@ -47,7 +47,7 @@ des_ano_no_error <-unique(no_error[,c("Desease", "Año", "Dpto")])              
 results_pdf <- data.frame(matrix(ncol=5, nrow=0))                   # Crear el data frame de los resultados y nombrar las columnas
 colnames(results_pdf) <- c("Desease","Año","Departamento","Resultado","Mensaje")
 
-deseases <- c("Malaria") # ,"Malaria","Mortalidad Materna"
+deseases <- c("Fiebre Amarilla","Chagas","Hepatitis C") # ,"Malaria","Mortalidad Materna"
 years <- 2007:2022
 for (desease in deseases) {
   data_desease <- des_ano_no_error[des_ano_no_error$Desease == desease,]  # Filtrar la tabla para coger solo las filas del desease
@@ -74,4 +74,4 @@ for (desease in deseases) {
 #write_xlsx(results_pdf, "Results create_pdf 2.xlsx")
 
 df <- apply(results_pdf,2,as.character)
-write.csv2(df,"Results create_pdf 6.csv",row.names = FALSE, na='')
+write.csv2(df,"Results group 3.csv",row.names = FALSE, na='')
